@@ -1,0 +1,8 @@
+-Chapter I-
+
+Math operators in Python (from higest to lowest precedence): ** % // / * - +
+
+Expressions are just values combined with operators, and they always evaluate down to a single value.
+
+Data type: category for values, and every value belongs to exactly one data type. Most common: integers (int) like -2, 0, 5; floating-point numbers (floats) like -1.25, -1.0, 0.0, 1.25; strings (str) like 'a', 'Hello!', '11 cats'.
+
