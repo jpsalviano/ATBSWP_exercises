@@ -75,3 +75,20 @@ Representation error -> explains the “0.1” example in detail.
 
 -Chapter II - Flow Control-
 
+Boolean values: True / False
+
+Comparison operators: == != < > <= =>
+
+Boolean operators: and / or / not
+
+After any math and comparison operators evaluate, Python evaluates the not operators first, then the end operators, and the the or operators.
+
+Elements of Flow Control
+
+Flow Control Statements
+
+if statements
+
+else statements
+
+elif statements
