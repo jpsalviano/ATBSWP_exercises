@@ -1,4 +1,4 @@
--Chapter I-
+-Chapter I - Python Basics-
 
 Math operators in Python (from higest to lowest precedence): ** % // / * - +
 
@@ -37,17 +37,17 @@ integers, floats and strings
 
 4:
 values and operators
-they can be reduced to a single value
+they evaluate to a single value
 
 5:
-the difference is on how the computer interprets the data - when the program is executed the expression is solved by the computer and it presents a value while the statement feeds the computer with some kind of infomation
+the difference is on how the computer interprets the data - when the program is executed the expression is solved by the computer and it evaluates to a single value, while the statement feeds the computer with some kind of infomation and is not evaluated to a single value.
 
 6:
 20
 
 7:
-spamspamspam
-spamspamspam
+'spamspamspam'
+'spamspamspam'
 
 8:
 a variable name can't begin with a number
@@ -60,5 +60,18 @@ an integer can't be concatenated to a string nor a string can be added to a numb
 correction: 'I have eaten' + str(99) + ' burritos.'
 
 Extra credit:
-len()
-round()
+len():
+	Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+
+round(number[, ndigits]):
+	Return number rounded to ndigits precision after the decimal point. If ndigits is omitted or is None, it returns the nearest integer to its input.
+
+Floating Point Arithmetic: Issues and Limitations.
+(https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues)
+
+"On most machines today, floats are approximated using a binary fraction with the numerator using the first 53 bits starting with the most significant bit and with the denominator as a power of two. In the case of 1/10, the binary fraction is 3602879701896397 / 2 ** 55 which is close to but not exactly equal to the true value of 1/10."
+
+Representation error -> explains the “0.1” example in detail.
+
+-Chapter II - Flow Control-
+
