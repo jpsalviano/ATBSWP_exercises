@@ -6,3 +6,59 @@ Expressions are just values combined with operators, and they always evaluate do
 
 Data type: category for values, and every value belongs to exactly one data type. Most common: integers (int) like -2, 0, 5; floating-point numbers (floats) like -1.25, -1.0, 0.0, 1.25; strings (str) like 'a', 'Hello!', '11 cats'.
 
+Overwriting the variable: when a variable is assigned a new value, the old value is forgotten.
+
+yourFirstProgram.py
+
+Argument: a value that is passed to a function call.
+
+print()
+input()
+len()
+str(), int(), float()
+
+Practice Questions
+
+1:
+* operator
+'hello' value
+-88.8 value
+- operator
+/ operator
++ operator
+5 value
+
+2:
+spam variable
+'spam' string
+
+3:
+integers, floats and strings
+
+4:
+values and operators
+they can be reduced to a single value
+
+5:
+the difference is on how the computer interprets the data - when the program is executed the expression is solved by the computer and it presents a value while the statement feeds the computer with some kind of infomation
+
+6:
+20
+
+7:
+spamspamspam
+spamspamspam
+
+8:
+a variable name can't begin with a number
+
+9:
+int(), float(), str()
+
+10:
+an integer can't be concatenated to a string nor a string can be added to a number
+correction: 'I have eaten' + str(99) + ' burritos.'
+
+Extra credit:
+len()
+round()
