@@ -92,3 +92,12 @@ if statements
 else statements
 
 elif statements
+
+while loop statements
+
+break statements
+
+continue statements
+
+for loops and the range() function
+
