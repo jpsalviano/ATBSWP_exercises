@@ -101,3 +101,63 @@ continue statements
 
 for loops and the range() function
 
+An Equivalent while loop
+
+The Starting, Stopping, and Stepping Arguments to range()
+
+Importing modules
+
+from import Statements
+
+Ending a Program Early with sys.exit()
+
+Practice Questions
+
+1:
+True and False
+
+2:
+and or not
+
+3:
+True and True = True
+True and False = False
+False and False = False
+
+True or True = True
+True or False = True
+False or False = False
+
+not True = False
+not False = True
+
+4:
+False
+False
+True
+False
+False
+True
+
+5:
+< <= > => == !=
+
+6:
+== equal (comparison operator)
+= assignment (assigns a variable to a value, such as a string)
+
+7:
+A piece of a block of code that is evaluated to True or False and depending of the result of that evaluation it executes the rest of the block of code or just skip it.
+
+8:
+-first block - assigning a value to a variable
+spam = 0
+-second block - condition clauses and codes to be executed or skipped
+if spam == 10:
+  print('eggs')
+  if spam > 5:
+    print('bacon')
+  else:
+    print('ham')
+-third block - a print function that will be executed anyway
+print('spam')
