@@ -122,10 +122,12 @@ and or not
 3:
 True and True = True
 True and False = False
+False and True = False
 False and False = False
 
 True or True = True
 True or False = True
+False or True = True
 False or False = False
 
 not True = False
@@ -140,24 +142,76 @@ False
 True
 
 5:
-< <= > => == !=
+< <= > >= == !=
 
 6:
 == equal (comparison operator)
-= assignment (assigns a variable to a value, such as a string)
+= assignment operator (stores a value to a variable)
 
 7:
 A piece of a block of code that is evaluated to True or False and depending of the result of that evaluation it executes the rest of the block of code or just skip it.
+Answer from the book: A condition is an expression used in a flow control statement that evaluates to a Boolean value.
 
 8:
--first block - assigning a value to a variable
-spam = 0
--second block - condition clauses and codes to be executed or skipped
-if spam == 10:
-  print('eggs')
-  if spam > 5:
-    print('bacon')
-  else:
-    print('ham')
--third block - a print function that will be executed anyway
-print('spam')
+corrected - The three blocks are everything inside the if statement and the lines
+print('bacon') and print('ham').
+
+	print('eggs')
+	if spam > 5:
+		print('bacon')
+	else:
+		print('ham')
+	print('spam')
+
+9:
+spam = input()
+
+if spam == 1:
+    print('Hello')
+elif spam == 2:
+    print('Howdy')
+else:
+    print('Greetings!')
+
+10)
+ctrl + c
+
+11)
+a break statement makes the code leave the loop immediately while a continue statement restarts the loop right away
+
+12)
+there's no difference among those options. in the first case, only the final point of the range is informed which makes it start from 0. in the second range, the 0 is informed as the starting point, just as standard, and that's what happens in the third range as well, which brings the 1 as an argument to inform the steps from a number to another in the range. 1 is also standard (meaning that there's no need to inform it as it's predetermined).
+
+13)
+# for loop
+
+for i in range(11):
+    print(i)
+
+# while loop
+
+i = 0
+while i <= 10:
+    print(i)
+    i += 1
+
+14)
+spam.bacon().
+
+Extra credit:
+round(number[, ndigits]):
+	Return number rounded to ndigits precision after the decimal point. If ndigits is omitted or is None, it returns the nearest integer to its input.
+abs():
+	Return the absolute value of a number. The argument may be an integer or a floating point number. If the argument is a complex number, its magnitude is returned.
+
+-Chapter III - Functions -
+
+def Statements with Parameters
+
+parameter is a variable that an argument is stored in when a function is called
+
+Return Values and return Statements
+
+return value of the function is the value that a function call evaluates to
+
+with the return statement one can specify what the return value is
