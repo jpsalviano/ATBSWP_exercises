@@ -226,3 +226,89 @@ if you use return statement without a value, then None is returned
 
 Keyword Arguments and print()
 
+print() keyword arguments: end='' and sep=''
+
+Local and Global Scope
+
+Local Variables Cannot Be Used in the Global Scope
+
+Local Scopes Cannot Use Variables in Other Local Scopes
+
+Global Variables Can Be Read from a Local Scope
+
+Local and Global Variables with the Same Name
+
+should be avoided
+
+The global Statement
+
+it modifies a global variable from within a function
+
+in a function, a variable will either always be global or always be local
+
+Functions as 'Black Boxes'
+
+you treat functions as black boxes when you're not interested in its code, but only in its inputs (the parameters) and output value. that is possible only because there's no need to worry about variables in the local scope interacting with the global and other local scopes
+
+Exception Handling
+
+try and except clauses
+
+once an error is detected, the except clause is executed and the code goes forward
+
+A Short Program: Guess the Number
+
+Practice Questions
+
+1:
+Functions are a good way to organize a code. They operate on a local scope that don't directly interact with other local scopes from different functions but there's the option to access (or even modify with the keyword global) information of the global scope.
+Answer from book: Functions reduce the need for duplicate code. This makes programs
+shorter, easier to read, and easier to update.
+
+2:
+The code in a function is executed when the function is called.
+
+3:
+The def statement.
+def nameOfTheFuction(parameters):
+
+4:
+A function consists of the def statement and the code in its def clause. It describes instructions to the computer for the event of calling the function using arguments, when the function has parameters, or not.
+A function call is the statement that consists of the name of the function followed by (), with arguments between the parenthesis, if the function predicts the use of parameters. That makes the code defined previously in the function be executed and evaluted to a return value.
+
+5:
+Only one global scope. The amount of local scopes depends on the number of functions in the program, since in each function there's a different local scope.
+
+6:
+The local scope is destroyed and all the assignments are undone, therefore the variables will be forgotten.
+
+7:
+A return value is the value that a function call evaluates to. It can be used as part of an expression
+
+8:
+The return value is None.
+
+9:
+You need to use the global statement.
+
+10:
+NoneType data type.
+
+11:
+It imports the module areallyourpetsnamederic, so you'll be able to use the functions from it.
+
+12:
+spam.bacon()
+
+13:
+You can use try and except clauses.
+Answer from the book: Place the line of code that might cause an error in a try clause.
+
+14:
+In the try clause go function calls and in the except clause goes a code that will be executed when an error is encountered.
+Answer from the book: The code that could potentially cause an error goes in the try clause.
+The code that executes if an error happens goes in the except clause.
+
+Practice Projects
+
+page 79
