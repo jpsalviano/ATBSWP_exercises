@@ -215,3 +215,14 @@ Return Values and return Statements
 return value of the function is the value that a function call evaluates to
 
 with the return statement one can specify what the return value is
+
+The None Value
+
+the value called None (NoneType data type) represents the absence of value
+
+behind the scenes, Python adds return None to the end of any function definition with no return statement
+
+if you use return statement without a value, then None is returned
+
+Keyword Arguments and print()
+
