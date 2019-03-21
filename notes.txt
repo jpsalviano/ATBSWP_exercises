@@ -311,4 +311,103 @@ The code that executes if an error happens goes in the except clause.
 
 Practice Projects
 
-page 79
+(in the folder chapter3)
+
+- Chapter IV - Lists -
+
+The List Data Type
+
+list value refers to the list itself (can be stored in a variable os passed to a function like any other value), no the values inside the list value
+
+values inside the list are also called items, which are separated by commas
+
+[] - empty list (just like '' is the empty string value)
+
+Getting Individual Values in a List with Indexes
+
+lists can also contain other list values, that can be accessed using multiple indexes (list[1][2] - accesses item list at index 1 and its item at index 2)
+
+Negative Indexes
+
+-1 is the last index in a list, -2 is the second-to-last, and so on
+
+Getting Sublists with Slices [1:3]
+
+a slice goes up to, but will not include, the value at the second index
+
+Getting a List's Length with len()
+
+Changing Values in a List with Indexes
+
+List Concatenation and List Replication
+
+Removing Values from Lists with del Statements
+
+example: del list[1]
+
+it also can be used on a simple variable to delete it, but it's mostly used to delete values from lists
+
+Working with Lists
+
+string concatenation - list + [element]
+
+Using for Loops with Lists
+
+common technique - for item in range(len(list)) - iterates over all the items
+
+The in and not in Operators
+
+they're used in expressions to connect two values: one to look for in a list and the list where it may be found - the expressions will evaluate to a Boolean value
+
+The Multiple Assignment Trick
+
+example:
+cat = ['fat', 'black', 'loud']
+size, color, disposition = cat
+
+the number of variables and the length of the list must be exactly equal
+
+Augmented Assignment Operators
+
++= -= *= /= %=
+
++= can be used for string and list concatenation, and the *= operator can do string and list replication
+
+Methods
+
+the same as a function but it's called on a value: listvalue.method(argument)
+
+each data type has its own set of methods
+
+Finding a Value in a List with the index() Method
+
+listvalue.index('string to be found')
+
+when there are dupliates of the value in the list, the index of its first appearance is returned
+
+Adding Values to Lists with the append() and insert() Methods
+
+append(): adds the argument to the of the list
+
+insert(<index for the new value>, <new value to be inserted>): insert a value at any index in the list
+
+Removing Values from Lists with remove()
+
+listvalue.remove(<value to be removed>)
+
+if the value appears multiple times in the list, only the first instance of if will be removed
+
+the del statement (del list[index]) is good to use when you know the index of the value you want to remove; the remove() is good when you know the value you want to remove from the list
+
+Sorting the Values in a List with the sort() Method
+
+lists of number values or strings can be sorted, but you can't sort lists that have both number values and string values in them
+
+“ASCIIbetical order” - uppercase letters come before lowercase letters
+
+sorting in reverse order: list.sort(reverse=True)
+
+sorting in alphabetical order: list.sort(key=str.lower)
+
+Example Program: Magic 8 Ball with a List
+
