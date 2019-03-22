@@ -411,3 +411,99 @@ sorting in alphabetical order: list.sort(key=str.lower)
 
 Example Program: Magic 8 Ball with a List
 
+Exceptions to Indentation Rules in Python
+
+the multiline [] and the \ line continuation
+
+List-like Types: Strings and Tuples
+
+many of the things you can do with lists can also be done with strings: indexing; slicing; and using them with for loops, with len(), and with the in and not in operations
+
+Mutable and Immutable Data Types
+
+lists are mutable, strings are immutable
+
+the only way to mutate a string is slicing it and creating a new string
+
+The Tuple Data Type
+
+almost identical to the list data type, except they're typed with parentheses () and they're immutable
+
+if there's only one value in the tuple, placing a trailing comma after the value inside the parethenses is necessary for Python to interpret it as a tuple, otherwise it'd just interpret it as a value inside parentheses
+
+tuples are used when you don't intend for some sequence of values to change
+
+as they're immutable, code using tuples is slightly faster than code using lists
+
+Converting Types with the list() and tuple() Functions
+
+converting a tuple to a list is handy if you need a mutable version of a tuple value
+
+References
+
+when you assign a list to a variable, you are actually assigning a list reference to the variable - that happens to mutable data types like dictionary and list
+
+a reference is a value that points to some bit of data
+
+Passing References
+
+when you alter the list referenced in a variable, you're altering the list in place - even if the change is made in a function call, the list is changed globally
+
+The copy Module's copy() and deepcopy() Functions
+
+list2 = copy.copy(<list1>)
+
+if the list you need to copy contains lists:
+list2 = copy.deepcopy(<list1>)
+
+Practice Questions
+
+1:
+it's an empty list.
+
+2:
+spam[2] = 'hello'
+
+3:
+'d'
+
+4:
+'d'
+
+5:
+['a', 'b']
+
+6:
+1
+
+7:
+[3.14, 'cat', 11, 'cat', True, 99]
+
+8:
+[3.14, 11, 'cat', True]
+
+9:
+the same as string concatenation and replication operators (+ and *)
+
+10:
+append() passes an argument and adds it to the end of the list it was called on
+insert(<index for the new value>, <new value to be inserted>): inserts a value at any index in the list it was called on
+
+11:
+you can use a del statement on list[index]; or
+you can use the remove() method, passing the value of the item you want to be removed
+
+12:
+they both are ordered sequences (lists contain items and strings contain single characters) and can be operated using their elements indexes, they can be concatenated, replicated, and have their length from the len() function
+
+13:
+tuples are immutable and use ()
+lists are mutable and use []
+
+14:
+(42,)
+
+15:
+to get the tuple form of a list value you need to use the tuple() function and the list value as the argument. the other way around: list(), using the tuple value as the argument.
+
+16:
