@@ -459,7 +459,7 @@ list2 = copy.deepcopy(<list1>)
 Practice Questions
 
 1:
-it's an empty list.
+it's the empty list value.
 
 2:
 spam[2] = 'hello'
@@ -494,7 +494,7 @@ you can use a del statement on list[index]; or
 you can use the remove() method, passing the value of the item you want to be removed
 
 12:
-they both are ordered sequences (lists contain items and strings contain single characters) and can be operated using their elements indexes, they can be concatenated, replicated, and have their length from the len() function
+they both are ordered sequences (lists contain items and strings contain single characters) and can be operated using their elements indexes and slices, they can be concatenated, replicated, used in for loops and in the len() function
 
 13:
 tuples are immutable and use ()
@@ -507,3 +507,107 @@ lists are mutable and use []
 to get the tuple form of a list value you need to use the tuple() function and the list value as the argument. the other way around: list(), using the tuple value as the argument.
 
 16:
+they contain references to list values
+
+17:
+both functions can make copies of lists that are passed as arguments - the copy.deepcopy() though is used to make copies of lists that are contained in other lists
+
+Practice Projects
+
+- Chapter V - Dictionaries and Structuring Data -
+
+The Dictionary Data Type
+
+indexes for dictionaries are called keys, and a key with its associated value is called a key-value pair
+
+Dictionaries vs. Lists
+
+items in dictionaries are unordered - so they can't be sliced like lists
+
+The keys(), values(), and items() Methods
+
+these methods will return list-like values of the dictionary (keys, values and both)
+
+the values returned are not true lists as they can't be modified and do not have an append() method
+
+but these data types (dict_keys, dict_values, and dict_items) can be used in for loops
+
+if you want a true list from one of these methods: list()
+
+when using items() in a for loop, you can use the multiple assignment trick
+
+Checking Whether a Key or Value Exists in a Dictionary
+
+'in' and 'not in'
+
+in <dictname> == in dictname.keys() - the dictionary name only calls the keys values
+
+if you want to check the values of values or items, gotta use the methods
+
+The get() Method
+
+two args: the key of the value to retrieve and a fallback value to return if that key does not exist
+
+The setdefault() Method
+
+sets a value in a dictionary for a certain key only if that key does not already have a value
+
+two args: a key to check for and the value to set at the key if the does not exist. If it exists, the method will return the key's value
+
+Pretty Printing
+
+import pprint
+
+pprint.pprint(someDictionaryValue) -> pretty prints the dictionary
+pprint.pformat(someDictionaryValue) -> gets the prettified text as a string value instead of displaying it on the screen
+
+Using Data Structures to Model Real-World Things
+
+A Tic-Tac-Toe Board
+
+Nested Dictionaries and Lists
+
+Summary
+
+Practice Questions
+
+1:
+{}
+
+2:
+{'foo': 42}
+
+3:
+Lists are ordered sequences and its items are indexed to an integer, while dictionaries are unordered and its items consist of a key-value pair.
+
+4:
+A KeyError is displayed, since there's no 'foo' key in the spam dictionary.
+
+5:
+There's no practical difference as 'cat' in spam will look for keys named 'cat' in spam dictionary.
+
+6:
+The expression 'cat' in spam will make Python look for a key named 'cat' in spam dictionary, while 'cat' in spam.values() will make Python look for a value named 'cat'.
+
+7:
+spam.setdefault('color', 'black')
+
+8:
+module pprint
+functions: pprint.pprint() - returns a pretty printed dctionary; and pprint.pformat() - returns a pretty formatted string from a dict
+
+Practice Projects
+
+fantasyGameInventory.py
+
+- Chapter 6 - Manipulating Strings -
+
+Working with Strings
+
+String Literals
+
+Double Quotes
+
+Escape Characters
+
+\ followed by the character
