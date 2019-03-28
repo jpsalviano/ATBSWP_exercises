@@ -587,14 +587,13 @@ A KeyError is displayed, since there's no 'foo' key in the spam dictionary.
 There's no practical difference as 'cat' in spam will look for keys named 'cat' in spam dictionary.
 
 6:
-The expression 'cat' in spam will make Python look for a key named 'cat' in spam dictionary, while 'cat' in spam.values() will make Python look for a value named 'cat'.
+The expression 'cat' in spam checks whether there is a key named 'cat' in spam dictionary, while 'cat' in spam.values() checks if there's a value 'cat' for one of the keys.
 
 7:
 spam.setdefault('color', 'black')
 
 8:
-module pprint
-functions: pprint.pprint() - returns a pretty printed dctionary; and pprint.pformat() - returns a pretty formatted string from a dict
+pprint.pprint()
 
 Practice Projects
 
@@ -611,3 +610,48 @@ Double Quotes
 Escape Characters
 
 \ followed by the character
+
+Raw Strings
+
+r before the beginning quotation
+
+it completely ignores all escape characters and prints any backslash that appears in the string
+
+they are useful if you're typing string values that contain many backslashes, such as the ones used for regular expressions
+
+Multiline Strings with Triple Quotes
+
+any quotes, tabs, or newlines in betwwent he 'triple quotes' are considered part of the string
+
+Multiline Comments
+
+a multiline string is often used for comments that span multiple lines
+
+the hash character (#) marks the beginning of a comment for the rest of the line only
+
+Indexing and Slicing Strings
+
+same way lists do
+
+The in and not in Operators with Strings
+
+same way as lists
+
+Useful String Methods
+
+The upper(), lower(), isupper(), and islower() String Methods
+
+isupper() and islower() will return a Boolean True value if the string hs at least one letter and all the leterres are uppercase or lowercase
+
+The isX String Methods
+
+isalpha() - returns True if the string consists only of letters and is not blank
+isalnum() - returns True if the string consists only of letters and/or numbers and is not blank
+isdecimal() - returns True if the string consists only of numeric characters and is not blank
+isspace() - returns True if the string consists only of spaces, tabs, and newlines and is not blank
+istitle() - returns True is the string consists only of words that begin with an uppercase letter followed by only lowercase letters
+
+these methods are helpful when you need to validate user input
+
+The startswith() and endswith() String Methods
+
