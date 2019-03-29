@@ -655,3 +655,20 @@ these methods are helpful when you need to validate user input
 
 The startswith() and endswith() String Methods
 
+they return Boolean values
+
+The join() and split() String Methods
+
+join() - joins a list of strings together into a single string value. It's callend on a string, gets passed a list of strings, and returns a string
+
+split() - does the opposite of join(). The strings get splitted by default wherever whitespace characters such as the space, tab, or newline characters are found. You can pass a delimiter string to the method to specify a different string to split upon.
+
+Justifying Text with rjust(), ljust(), and center()
+
+rjust() and ljust() - returns a padded version of the string they are called on, with spaces inserted to justify the text. First arg: an integer lenght for the justified string. Second arg (optional): specifies a fill character (other than the default space character).
+
+center() - works as the previous methods but centers the text rather than justifying it to the left or right
+
+these methods are specially useful when you need to print tabular data that has the correct spacing
+
+Removing Whitespace with strip(), rstrip(), and lstrip()

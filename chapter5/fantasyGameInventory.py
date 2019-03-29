@@ -18,7 +18,7 @@ print('YOU KILLED IT!' + '\n')
 
 dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
 
-print('Dragon\'s loot: ' + str(dragonLoot))
+print('Dragon\'s loot: ' + ', '.join(dragonLoot) + '.')
 
 def addToInventory(backpack, addedItems):
     for item in addedItems:
