@@ -659,16 +659,107 @@ they return Boolean values
 
 The join() and split() String Methods
 
-join() - joins a list of strings together into a single string value. It's callend on a string, gets passed a list of strings, and returns a string
+join() - joins a list of strings together into a single string value. It's called on a string, gets passed a list of strings, and returns a string
 
 split() - does the opposite of join(). The strings get splitted by default wherever whitespace characters such as the space, tab, or newline characters are found. You can pass a delimiter string to the method to specify a different string to split upon.
 
 Justifying Text with rjust(), ljust(), and center()
 
-rjust() and ljust() - returns a padded version of the string they are called on, with spaces inserted to justify the text. First arg: an integer lenght for the justified string. Second arg (optional): specifies a fill character (other than the default space character).
+rjust() and ljust() - returns a padded version of the string they are called on, with spaces inserted to justify the text. First arg: an integer length for the justified string. Second arg (optional): specifies a fill character (other than the default space character).
 
 center() - works as the previous methods but centers the text rather than justifying it to the left or right
 
 these methods are specially useful when you need to print tabular data that has the correct spacing
 
 Removing Whitespace with strip(), rstrip(), and lstrip()
+
+strip() - method returns a new string without any whitespace characters at the beginning or end
+
+lstrip() and rstrip() - will remove whitespace characters from the left and right ends, respectively
+
+optional arg: a string could specify which characters on the ends should be stripped (the order of the characters in the string is irrelevant)
+
+Copying and Pasting Strings with the pyperclip Module
+
+copy() and paste() functions that can send text to and receive text from computer's clipboard
+
+Running Python Scripts Outside of Idle (Appendix B)
+
+Shebang Line
+
+first line of the program, tells your computer that you want Python to execute this program:
+
+windows - #! python3
+linux - #! /usr/bin/python3
+
+the line is needed to run Python scripts from the command line instead of the IDLE
+
+Running Python Programs on Linux
+
+1) save your. py file to your home folder; 2) change the .py file's permissions to make it executable by running chmod +x <file>.py; 3) then it will be possible to run the program from the Terminal entering ./<file>.py
+
+Running Python Programs with Assertions Disabled
+
+you can disable the assert statements in your programs for a slight performance improvement:
+when running Python from the terminal, include the -0 switch after python or python3 and before the name of the .py file
+
+assertion checks will be skipped
+
+Project: Password Locker
+
+Step 1: Program Design and Data Structures
+
+Step 2: Handle Command Line Arguments
+
+Step 3: Copy the Right Password
+
+Project: Adding Bullets to Wiki Markup
+
+Step 1: Copy and Paste from the Clipboard
+
+Step 2: Separate the Lines of Text and Add the Star
+
+Step 3: Join the Modified Lines
+
+Even if you don't need to automate this specific task, you might want to automate some other kind of text manipulation, such as removing trailing spaces from the end of lines or converting text to uppercase or lowercase. Whatever your needs, you can use the clipboard for input and output.
+
+Practice Questions
+
+1:
+characters which represent a special output to the python interpreter. they always start with a backslash (\). for intance, there is the newline escape character (\n).
+
+2:
+\n - newline | \t - tab
+
+3:
+\\
+
+4:
+as this specific string is marked by double quotes (""), python inteprets a single quote (') in it as its text value, so it doesn't need to be escaped.
+
+5:
+you can use triple quotes (''') to mark the start and the of the string, and that allows the string to have textual newlines.
+
+6:
+-'e'
+-'Hello '
+-'Hello '
+-'lo world!'
+
+7:
+-'HELLO'
+-True
+-'hello'
+
+8:
+-['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']
+-'There-can-be-only-one.'
+
+9:
+rjust(), ljust(), center()
+
+10:
+lstrip(), rstrip(), strip()
+
+Practice Project
+
