@@ -763,3 +763,13 @@ lstrip(), rstrip(), strip()
 
 Practice Project
 
+printTable.py
+
+PART II - Automating Tasks
+
+- Chapter 7 -
+
+Pattern Matching with Regular Expressions
+
+Finding Patterns of Text Without Regular Expressions
+
