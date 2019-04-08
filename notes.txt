@@ -726,7 +726,7 @@ Even if you don't need to automate this specific task, you might want to automat
 Practice Questions
 
 1:
-characters which represent a special output to the python interpreter. they always start with a backslash (\). for intance, there is the newline escape character (\n).
+Escape characters represent characters in string values that would otherwise be difficult or impossible to type into code.
 
 2:
 \n - newline | \t - tab
@@ -738,12 +738,12 @@ characters which represent a special output to the python interpreter. they alwa
 as this specific string is marked by double quotes (""), python inteprets a single quote (') in it as its text value, so it doesn't need to be escaped.
 
 5:
-you can use triple quotes (''') to mark the start and the of the string, and that allows the string to have textual newlines.
+Multiline strings (triple quotes ''' at the beginning and the end of the string) allow you to use newlines in strings without the \n escape character.
 
 6:
 -'e'
--'Hello '
--'Hello '
+-'Hello'
+-'Hello'
 -'lo world!'
 
 7:
@@ -772,4 +772,192 @@ PART II - Automating Tasks
 Pattern Matching with Regular Expressions
 
 Finding Patterns of Text Without Regular Expressions
+
+Finding Patterns of Text with Regular Expressions
+
+regexes - regular expressions for short
+
+\d stands for a digit character (single numeral 0 to 9
+
+\d{3} - matches the pattern 3 times
+
+Creating Regex Objects
+
+re module - contains all the regex functions in Python
+
+Passing Raw Strings to re.compile()
+
+a raw string does not escape characters
+
+since regular expressions frequently use backslashes in them, it is convenient to pass raw strings to the re.compile() instead of typing extra backslashes
+
+Matching Regex Objects
+
+search() - method that will return None if the regex pattern is not found in the string. If the pattern is found, the method() returns a Match object
+
+Match objects have a group() method that will return the actual matched text from the searched string
+
+Review of Regular Expression Matching
+
+1) import the regex module with import re
+2) create a regex object with the re.compile() function (remember to use a raw string)
+3) pass the string you to search into the Regex object's search() method. This returns a Match object
+4) call the Match object's group() method to return a string of the actual matched text
+
+More Pattern Matching with Regular Expressions
+
+Grouping with Parentheses
+
+adding parentheses will create groups in the regex, by passing an integer to the group() match object method, you can grab different parts of the matched text. Passing 0 or nothing to the group() method will return the entire matched text
+
+parentheses have a special meaning in regular expressions. To match a parenthesis in the text you need to escape it with a backslash \ (it escapes even in a raw string)
+
+Matching Multiple Groups with the Pipe |
+
+the | character is called a pipe
+
+it can be used anywhere you want to match one of many expressions
+
+you can find all matching occurrences with the findall() method
+
+if you need to match an actual pipe character, escape it with a backslash \
+
+Optional Matching with the Question Mark ?
+
+match zero or one of the () group preceding this question mark
+
+if you need to match an actual question mark character, escape it with \?
+
+Matching Zero or More with the Star *
+
+the group that precedes the star can occur any number of times in the text
+
+if you need to match an actual star character, prefix the star in the regular expression with a backslash
+
+Matching One or More with the Plus +
+
+the group preceding a plus must appear at least once
+
+if you need to match, an actual plus sign character, prefix it with a \
+
+Matching Specific Repetitions with Curly Brackets {}
+
+(Ha){3} - will match 'HaHaHa'
+(Ha){3,5} - will match 'HaHaHa', 'HaHaHaHa', and 'HaHaHaHaHa'
+(Ha){,5} - will match zero to five instances
+(Ha){3,} - will match three or more instances
+
+Greedy and Nongreedy Matching
+
+in ambiguous situations Python will match the longest string possible - greedy by default.
+
+the nongreedy version of the curly brackets, which matches the shortest string possible, has the closing curly bracket followed by a question mark
+
+the question mark has two meanings in regular expressions: declaring a nongreedy match or flagging an optional group - these meanings are entirely unrelated
+
+The findall() Method
+
+will return the strings of every match in the searched string - in a list of strings, as long as there are no groups in the regular expression
+
+if there are groups in the regular expression, then findall() will return a list of tuples, and the items of each tuples will represent a group of the matched object
+
+Summarize findall() method:
+
+1) when called on a regex with no groups - returns a list of string matches
+2) when called on a regex that has groups - returns a list of tuples of strings (one string for each group)
+
+Character Classes
+
+\d - any numeric digit from 0 to 9
+\D - any character that is not a numeric digit from 0 to 9
+\w - any letter, numeric digit, or the underscore character ('word' characters)
+\W - any character that is not a letter, numeric digit, or the underscore character
+\s - any space, tab ow newline character ('space' characters)
+\S - any character that is not a space, tab, or a newline
+[0-5] - numbers from 0 to 5; instead of using (0|1|2|3|4|5)
+
+Making Your Own Character Classes
+
+you can define your own character class using square brackets
+
+inside the square brackets the normal regular expression symbols are not interpreted as such - there's no need to escape characters with a \
+
+negative character class - placing a caret character (^) just after the character class's opening bracket
+
+The Caret and Dollar Sign Characters
+
+^ - the caret symbol can be used at the start of a regex to indicate that a match must occur at the beginning of the searched text
+$ - the dollar sign can be put at the end of the regex to indicate the string must end with this pattern
+
+you can use ^ and $ together to indicate that the entire string must match the regex - 'carrots cost dollars'
+
+The Wildcard Character .
+
+matches any character except for a newline
+
+to match an actual dot, escape it with a \
+
+Matching Everything with Dot-Star .*
+
+dot character means 'any single character except the newline' and the star character means 'zero or more of the preceding character'
+
+the dot-star uses greedy mode
+
+to use it in a nongreedy fashion: .*?
+
+Matching Newlines with the Dot Character
+
+by passing re.DOTALL as the second argument to re.compile(), you can make the dot character match all characters, including the newline character
+
+Review of Regex Symbols
+
+? - matches zero or one of the preceding group
+* - matches zero or more of the preceding group
++ - matches one or more of the preceding group
+{n} - matches exactly n of the preceding group
+{n,} - matches n or more of the preceding group
+{,m} - matches 0 to m of the preceding group
+{n,m} - matches at least n and at most m of the preceding group
+{n,m}? or *? or +? performs a nongreedy match of the preceding group
+^spam - the string must begin with spam
+spam$ - the string must end with spam
+. - matches any character, except newline characters
+\d, \w, and \s - match a digit, word, or space character, respectively
+\D, \W, and \S - match anything except a digit, word, or space character, respectively
+[abc] - matches any character between the brackets (such as a, b, or c)
+[^abc] - matches any character that isn't between the brackets
+
+Case-Insensitive Matching
+
+to make your regex case-insensitive, you can pass re.IGNORECASE or re.I as a second argument to re.compile()
+
+Substituting Strings with sub() Method
+
+first arg: a string to replace any matches
+second arg: string for the regular expression
+
+the method returns a string with the substitutions applied
+
+sometimes you may need to use the matched text itself as part of the substitution - in the first argument to sub(), you can type \1, \2, \3, and so on, to mean 'enter the text of group 1, 2, 3, and so on, in the substitution'
+
+Managing Complex Regexes
+
+you can spread the regular expression over multiple lines with comments like this:
+
+phoneRegex = re.compile(r'''(
+	(\d{3}|\(\d{3}\))?				# area code
+	(\s|-|\.)?						# separator (optional)
+	\d{3}							# first 3 digits
+	(\s|-|\.)						# separator
+	\d{4}							# last 4 digits
+	(\s*(ext|x|ext.)\s*\d{2,5})?	# extension
+	)''', re.VERBOSE)
+
+Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
+
+re.compile() takes only a single value as its second argument, but you can get around this limitation using the pipe character |, which in thix context is known as the bitwise or operator
+
+someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
+
+Project: Phone Number and Email Address Extractor
 
