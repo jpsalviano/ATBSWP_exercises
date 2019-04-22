@@ -641,7 +641,7 @@ Useful String Methods
 
 The upper(), lower(), isupper(), and islower() String Methods
 
-isupper() and islower() will return a Boolean True value if the string hs at least one letter and all the leterres are uppercase or lowercase
+isupper() and islower() will return a Boolean True value if the string has at least one letter and all the letters are uppercase or lowercase
 
 The isX String Methods
 
@@ -967,7 +967,7 @@ Practice Questions
 re.compile() - the re module has to be imported first in order to make the function works in Python
 
 2:
-since regexes often use backslashes in them, it is convenient to pass raw strings to the re.compile() function instead of typing extra backslashes.
+since regexes often use backslashes in them, it is convenient to pass raw strings to the re.compile() function so the backslashes won't need to be escaped.
 
 3:
 it returns the first matched object in the text passed to it
@@ -976,7 +976,7 @@ it returns the first matched object in the text passed to it
 by using the function group() or groups()
 
 5:
-group 0 cover the whole match, group 1 covers the first group inside the parentheses and group 2 covers the second one
+group 0 cover the entire match, group 1 covers the first group inside the parentheses and group 2 covers the second one
 
 6:
 they must be escaped with a backslash: \. and \( \)
@@ -985,7 +985,7 @@ they must be escaped with a backslash: \. and \( \)
 it will return a list of strings if the regex contains at most one group. and each element of the list will represent a match. otherwise, the matches will be returned separately in different tuples, and in each tuple its elements (strings) will represent a regex group in the matched object
 
 8:
-the pipe character | enables you to match one of many expressions. for instance: (ext|x|ext.) -> this group will match ext OR x OR ext.
+the pipe character | allows you to match one of many expressions. for instance: (ext|x|ext.) -> this group will match ext OR x OR ext. Either or between two groups.
 
 9:
 the question mark ? flags a preceding group as one that can be matched zero or more times (it's optional then). it also can precede {}, * and + to declare them as a nongreedy match.
@@ -1009,10 +1009,10 @@ the question mark ? flags a preceding group as one that can be matched zero or m
 \S - matches everything but a space character
 
 14:
-by passing 're.I' as second argument in the re.compile() function
+by passing 're.I' as the second argument to the re.compile() function
 
 15:
-it matches every character but a newline. it matches everything including a newline.
+. matches every character but a newline. if re.DOTALL is passed as the second argument, it will match everything including a newline.
 
 16:
 .* matches every character but a newline as many times it appears, it works in a greedy fashion. when the question mark is used after all (.*?), it is set to the nongreedy mode.
@@ -1021,13 +1021,41 @@ it matches every character but a newline. it matches everything including a newl
 [0-9a-z]
 
 18:
-'X', 'XX drummers, XX pipers, five rings, X hens'
+X drummers, X pipers, five rings, X hens
 
 19:
-it allows you to use a multiline string in the regex compile function.
+it allows you to add whitespace and comments to the string passed to re.compile()
 
 20:
 re.compile(r'^\d{1,3}(,\d{3})*$') # book's answer is wrong!
 
 21:
-re.compile(r'[A-Z][a-z]\sNakamoto')
+re.compile(r'[A-Z][a-z]*\sNakamoto')
+
+22:
+re.compile(r'(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs)\.', re.I)
+
+Practice Projects
+
+Strong Password Detection -> strongPasswordDetection.py
+
+Regex Version of strip() -> regexStrip.py
+
+- Chapter 8 - Reading and Writing Files - 
+
+Files and File Paths
+
+two key properties: filename and a path
+
+Backslash on Windows and Forward Slash on OS X and Linux
+
+os.path.join() - if you pass the function string values of individual file and folder names in your path, it will return a string with a file path using the correct path separators
+
+The Current Working Directory - cwd
+
+os.getcwd() - get a string value of the cwd
+
+os.chdir() - change the cwd
+
+Absolute vs. Relative Paths
+
