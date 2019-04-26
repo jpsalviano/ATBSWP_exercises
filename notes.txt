@@ -1059,3 +1059,54 @@ os.chdir() - change the cwd
 
 Absolute vs. Relative Paths
 
+./ cwd
+
+../ parent folder
+
+Creating New Folders with os.makedirs()
+
+it creates several directories
+
+The os.path Module
+
+os.path.abspath(path) - returns a string of the absolute path of the argument
+
+os.path.isabs(path) - True if the argument is an absolute path and False if it is a relative path
+
+os.path.relpath(path, start) - returns a string of a relative path from the start path to path. If start is not provided, the cwd is used as the start path
+
+os.path.dirname(path) - returns a string of everything that comes before the last slash in the path argument
+
+os.path.basename(path) - returns a string of everthing that comes after the last slash in the path argument
+
+os.path.split() - returns a tuple value with two strings: base name and dir name
+
+'path'.split(os.path.sep) - the split() method will work to return a list of each part of the path if you pass it os.path.sep
+
+Finding File Sizes and Folder Contents
+
+os.path.getsize(path) - will return the size in bytes of the file in the path argument
+
+os.listdir(path) - will return a list of filename strings for each file in the path argument
+
+Checking Path Validity
+
+os.path.exists(path) - will return True if the file or folder referred to in the argument exists and will return False if it does not
+
+os.path.isfile(path) - will return True if the path argument exists and is a file and will return False otherwise
+
+os.path.isdir(path) - will return True if the path argument exists and is a folder and will return False otherwise
+
+The File Reading/Writing Process
+
+3 steps to reading or writing files in Python:
+
+open() to return a File object
+
+read() or write() method on the File object
+
+close() close the file
+
+Opening Files with the open() Function
+
+open() - 
