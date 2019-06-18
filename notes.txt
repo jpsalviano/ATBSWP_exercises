@@ -777,7 +777,7 @@ Finding Patterns of Text with Regular Expressions
 
 regexes - regular expressions for short
 
-\d stands for a digit character (single numeral 0 to 9
+\d stands for a digit character (single numeral 0 to 9)
 
 \d{3} - matches the pattern 3 times
 
@@ -793,7 +793,7 @@ since regular expressions frequently use backslashes in them, it is convenient t
 
 Matching Regex Objects
 
-search() - method that will return None if the regex pattern is not found in the string. If the pattern is found, the method() returns a Match object
+search() - method that will return None if the regex pattern is not found in the string. If the pattern is found, the method returns a Match object
 
 Match objects have a group() method that will return the actual matched text from the searched string
 
@@ -824,7 +824,7 @@ if you need to match an actual pipe character, escape it with a backslash \
 
 Optional Matching with the Question Mark ?
 
-match zero or one of the () group preceding this question mark
+match zero or one of the () group preceding the question mark ?
 
 if you need to match an actual question mark character, escape it with \?
 
@@ -1109,4 +1109,197 @@ close() close the file
 
 Opening Files with the open() Function
 
-open() - 
+open() - returns a File object
+
+Reading the Contents of Files
+
+file = open('filepath')
+file.read() - reads the file in a single string
+file.readlines() - returns a list of strings, one for each line
+
+Writing to Files
+
+write plaintext mode - overwrites the existing file and start from scratch. 'w' as the second argument to open()
+append plaintext mode - appends text to the end of the existing file. 'a' as the second argument to open()
+
+if the filename passed to open() doesn't exist a new one will be created
+
+Saving Variables with the shelve Module
+
+shelfFile = shelve.open('mydata')
+shelfFile['configurations'] = list
+shelfFile.close()
+list(shelfFile.keys())
+list(shelfFile.values())
+
+Saving Variables with the pprint.pformat() Function
+
+saving in text files
+
+Project: Generating Random Quiz Files
+
+Project: Multiclipboard
+
+Practice Questions
+
+1) to the current work directory
+
+2) absolute paths start with the root folder: such as c:\ on Windws or / on Linux
+
+3) os.getcwd() returns the current work directory, while os.chdir() changes the cwd to the path passed on the function
+
+4) . is the current folder. .. is the parent folder.
+
+5) dir names is everything before the last \ (C:\bacon\eggs), and the base name is everything after it(spam.txt)
+
+6) r - read; w - write; a - append
+
+7) it's completely erased and overwritten by the new one
+
+8) read() returns a string with all the file's contents; readlines() returns a list  of strings with each line of the content as an element
+
+9) a dictionary (keys and values)
+
+Practice Projects
+
+Extending Multiclipboard
+
+Mad Libs
+
+Regex Search
+
+
+- Chapter 9 - Organizing Files -
+
+The shutil (shell utilities) Module
+
+import shutil
+
+Copying Files and Folders
+
+shutil.copy(source, destination) - if destination is a filename, it will be used as the new name of the copied file. This function returns a string of the path of the copied file.
+
+shutil.copytree(source, destination) - copies an entire folder and every folder and file contained in it. Destination is the name of the copied folder that will be created. Returns the destination as a string.
+
+Moving and Renaming Files and Folders
+
+shutil.move(source, destination) - moves the file or folder at the path source to the path destination and returns a string of the absolute path of the new location.
+if destination points to a folder, the source gets moved into destination and keeps its current filename.
+the destination path can also specify a filename.
+if a file is copied and the destination folder doesn't exist, shutil.move() will move the file (to the parent folder that exists) and rename it with the destination string.
+the folder that make up the destination must already exist, or else Python will throw an exception.
+
+Permanently Deleting Files and Folders
+
+os.unlink(path) - will delete the file at path
+os.rmdir(path) - will delete the folder at path. this folder must be empty of any files or folders.
+shutil.rmtree(path) - will remove the folder at path, and all files and folders it contains will also be deleted.
+
+***it's often a good idea to first run your program with these calls commented out and print() calls added to show the files that would be deleted
+
+Safe Deletes with the send2trash Module (third-party)
+
+pip3 install send2trash
+
+send2trash.send2trash() - sends files to the recycle bin; it doesn't pull files out of it
+
+Walking a Directory Tree
+
+os.walk() - it is passed a single string value: the path of a folder. It returns three values on each iteration: 1) a string of the current folder's name; 2) a list of strings of the folders in the current folder; 3) a list of strings of the files in the current folder
+
+**in a program that involves for loops in each iteration, and one of these iterations is supposed to start at an empty list, the function stops and may not list everything you want. (example: in a determined folder there's no subfolders but there are some files - the for loop in the files will not run because the previous for loop in subfolders is supposed to start at an empty list. in that case, an if subfolders != [] may be a solution to jump straight to the files for loop without trying to iterate an empty list - and consenquently stopping the function early.)
+
+Compressing File with the zipfile Module (built-in)
+
+Reading ZIP Files
+
+to read contents of a zip file, first create a ZipFile object: zipfile.ZipFile('filename.zip') --- spam = zipfile.ZipFile('spam.zip')
+modes 'w' 'r' 'a' are applied
+
+namelist() - method that returns a list of strings for all the files and folders contained in the ZIP file --- spam.namelist() returns a list ['spam1.txt', 'spam2.txt', 'spam3.txt']
+
+getinfo() - the strings from the previous method can be passed to return a ZipInfo object --- spamInfo = spam.getinfo('spam1.txt')
+
+ZipInfo objects have their own attributes, such as file_size and compress_size in bytes
+
+ZipFile object -> represents an entire archive file
+ZipInfo object -> holds useful information about a single file in the archive
+
+Extracting from ZIP Files
+
+extractall() - extracts all the files and folders from a ZIP file into the current working directory.
+optionally, you can pass a folder name to extractall() to have it extract the files into a folder other than the cwd. if the folder does not exist, it will be created.
+
+extract('filename from namelist()', ['a folder other than the cwd']) - extracts a single file from the ZIP file. if the folder passed as the second argument doesn't exist, it will be created.
+the value the extract() returns is the absolute path to which the file was extracted.
+
+Creating and Adding to ZIP Files
+
+newZip = zipfile.ZipFile('new.zip', 'w') - 'w' mode as the second argument, just like with the open() method.
+
+newZip.write('filepath', compress_type=zipfile.ZIP_DEFLATED) - file is compressed at the path and added into the ZIP file. the compression type parameter tells the computer what algorithm it should use to compress the files. zipfile.ZIP_DEFLATED specifies the deflate compression algorithm, which works well on all types of data.
+
+newZip.close()
+
+Project: Renaming files with American-Style Dates to European-Style Dates
+
+Project: Backing Up a Folder into a ZIP File
+
+Practice Questions
+
+1) shutil.copy() copies a single file, while shutil.copytree() copies all the files, subfolders and files in subfolders
+
+2) shutil.move(source, destination) - used for moving and renaming files.
+
+3) shutil.rmtree(path) permanently removes folder and all its contents.
+   send2trash.send2trash(path) removes the files by moving them to the recycle bin.
+
+4) zipfile.ZipFile(name.zip, 'mode') - it is equivalent to the open().
+
+Practice Projects
+
+selectiveCopy.py
+
+findLargeFiles.py
+
+- Chapter 11 - Web Scraping -
+
+import webbrowser
+
+webbrowser.open('http://google.com')
+
+Downloading Files from the Web with the requests Module
+
+pip install requests
+
+import requests
+
+res = requests.get() - takes a string of a URL to download. res is a Response object. it has some variables
+
+len(res.text) - variable text makes a string out of the content
+
+res.status_code == requests.code.ok - checks if downloading content from web into res object was successful. but there's a simpler way to do that:
+res.raise_for_status() - this will raise an exception if there was an error downloading the file and will do nothing if the download succeeded
+
+try:
+	res.raise_for_status()
+except Exception as exc:
+	print('There was a problem: %s' % (exc))
+
+Always call raise_for_status() after calling requests.get() . You want to be sure that the download has actually worked before your program continues.
+
+Saving Downloaded Files to the Hard Drive
+
+playFile = open('RomeoAndJuliet.txt'), 'wb') - the iter_content() method returns chunks (bytes data type) of the content on each iteration
+
+for chunk in res.iter_content(100000): 
+	playFile.write(chunk) - the argument to the method determines the size of the chunk in bytes - one hundred thousand bytes is generally a good size
+
+playFile.close()
+
+step by step:
+1 Call requests.get() to download the file.
+2 Call open() with 'wb' to create a new file in write binary mode.
+3 Loop over the Response object’s iter_content() method.
+4 Call write() on each iteration to write the content to the file.
+5 Call close() to close the file.

@@ -19,6 +19,18 @@ else:
 # opens all .txt files in cwd
 # gets .txt files contents and passes regex
 # prints line if regex is matched
+for file in os.listdir():
+    if file.endswith('.txt'):
+        txtFile = open('./' + file)
+        txtContent = txtFile.readlines()
+        for line in txtContent:
+            if regex.search(line) != None:
+                if line[-1] == '\n':
+                    line = lin[0:-1]
+                print('line:\n\'' + line + '\'' + '\n[in file: ' + file + ']')
+        txtFile.close()
+
+''' this piece of code uses an itter. problem is the regex applied in the first line excludes spaces, which can be contained in filenames.
 for fileMatch in re.finditer(r'\S+\.txt', ' '.join(os.listdir('.'))):
     txtFile = open('./' + fileMatch.group())
     txtContent = txtFile.readlines()
@@ -28,3 +40,4 @@ for fileMatch in re.finditer(r'\S+\.txt', ' '.join(os.listdir('.'))):
                 line = line[0:-1]
             print('line:\n\'' + line + '\'' + '\n[in file: ' + fileMatch.group() + ']')
     txtFile.close()
+'''
