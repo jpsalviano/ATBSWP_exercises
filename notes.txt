@@ -1306,3 +1306,24 @@ step by step:
 
 HTML
 
+Resources for Leaning HTML
+
+A Quick Refresher
+
+Viewing the Source HTML of a Web Page
+
+Opening Your Browser's Developer Tools
+
+Don't Use Regular Expressions to Parse HTML
+
+http://stackoverflow.com/a/1732454/1893164/
+
+Using the Developer Tools to Find HTML Elements
+
+Parsing HTML with the BeautifulSoup Module
+
+pip install bs4 - VIRTUAL ENVIRONMENT
+
+Creating a BeautifulSoup Object from HTML
+
+bs4.BeautifulSoup() - you can parse a requests object text attr (requests.get() -> object.text) or an HTML file object - open()
