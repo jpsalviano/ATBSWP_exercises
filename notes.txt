@@ -1270,11 +1270,11 @@ webbrowser.open('http://google.com')
 
 Downloading Files from the Web with the requests Module
 
-pip install requests
+pip install requests -> USE VIRTUAL ENVIRONMENT
 
 import requests
 
-res = requests.get() - takes a string of a URL to download. res is a Response object. it has some variables
+res = requests.get('http://www.google.com') - takes a string of a URL to download. res is a Response object. it has some variables
 
 len(res.text) - variable text makes a string out of the content
 
@@ -1303,3 +1303,6 @@ step by step:
 3 Loop over the Response object’s iter_content() method.
 4 Call write() on each iteration to write the content to the file.
 5 Call close() to close the file.
+
+HTML
+
