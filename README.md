@@ -1,2 +1,2 @@
-#ATBSWP_exercises
-In this repository I'll keep all the solutions I find for the exercises presented in the book Automate the Boring Stuff with Python by Al Sweigart
+In this repository I'll keep all the solutions I find for the exercises presented in the book Automate the Boring Stuff with Python by Al Sweigart.
+Link to the [book](https://automatetheboringstuff.com/).
